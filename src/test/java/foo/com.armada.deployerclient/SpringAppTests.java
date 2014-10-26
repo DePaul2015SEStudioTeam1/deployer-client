@@ -28,4 +28,19 @@ public class SpringAppTests {
 	public void testSearchImage() {
 		System.out.println(dockerService.searchDockerRepository("helloworldtest"));
 	}
+
+	@Test
+	public void testPullImage() {
+		dockerService.pullDockerImage("armadaproject/helloworldtest");
+	}
+
+	@Test
+	public void testRemoveImage() {
+		dockerService.removeDockerImage("armadaproject/helloworldtest");
+	}
+
+	@Test
+	public void testStartImage() {
+
+	}
 }
