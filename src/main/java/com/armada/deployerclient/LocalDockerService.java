@@ -2,9 +2,13 @@ package com.armada.deployerclient;
 
 import com.github.dockerjava.api.DockerClient;
 import com.github.dockerjava.api.model.SearchItem;
-import com.github.dockerjava.jaxrs.DockerClientBuilder;
+import com.github.dockerjava.core.DockerClientConfig;
+import com.github.dockerjava.core.DockerClientBuilder;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Component;
 
+import java.io.IOException;
 import java.util.List;
 
 /**
@@ -13,10 +17,17 @@ import java.util.List;
 @Component
 public class LocalDockerService {
 
+	public static final Logger LOG = LoggerFactory
+			.getLogger(LocalDockerService.class);
+
 	private DockerClient dockerClient;
 
 	public String connectToLocalDocker() {
-		dockerClient = DockerClientBuilder.getInstance("http://localhost:2375").build();
+
+	    DockerClientConfig.DockerClientConfigBuilder b = DockerClientConfig.createDefaultConfigBuilder();
+		LOG.info(b.toString());
+		dockerClient = DockerClientBuilder.getInstance(b.build()).build();
+
 		return "connected to: " + dockerClient.toString();
 	}
 
@@ -27,6 +38,27 @@ public class LocalDockerService {
 
 	public String pullDockerImage(String imageName) {
 		return "";
+	}
+
+	public String createDockerContainer(String imageName) {
+		return "";
+	}
+
+	public String startDockerContainer(String imageName) {
+		return "";
+	}
+
+	public String stopDockerContainer(String imageName) {
+		return "";
+	}
+
+	public String cleanUp() {
+		try {
+			dockerClient.close();
+		} catch (IOException ioe) {
+			LOG.warn(ioe.toString());
+		}
+		return "cleaned up.";
 	}
 
 }

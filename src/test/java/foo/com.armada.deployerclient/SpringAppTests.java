@@ -22,13 +22,10 @@ public class SpringAppTests {
 	}
 
 	@After
-	public void tearDown() {
+	public void tearDown() { System.out.println(dockerService.cleanUp()); }
 
+	@Test
+	public void testSearchImage() {
+		System.out.println(dockerService.searchDockerRepository("helloworldtest"));
 	}
-
-    @Test
-    public void testSayHello() {
-	    System.out.println(dockerService.sayHello());
-        Assert.assertEquals("Hello world!", dockerService.sayHello());
-    }
 }
