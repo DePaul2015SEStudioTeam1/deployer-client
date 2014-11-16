@@ -5,4 +5,11 @@
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <context:annotation-config />
     <context:component-scan base-package="com.armada.deployerclient"/>
+
+	<!--<bean class="org.springframework.remoting.jaxws.SimpleJaxWsServiceExporter">-->
+		<!--<property name="baseAddress" value="http://localhost:8080/"/>-->
+	<!--</bean>-->
+	<!--<bean id="accountServiceEndpoint" class="com.armada.deployerclient.endpoints.DeployerServiceEndpoint">-->
+
+	<!--</bean>-->
 </beans>

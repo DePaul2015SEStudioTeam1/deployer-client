@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<display-name>jaxwsspring</display-name>
+	<session-config>
+		<session-timeout>30</session-timeout>
+	</session-config>
+	<listener>
+		<listener-class>org.springframework.web.context.ContextLoaderListener</listener-class>
+	</listener>
+	<welcome-file-list>
+		<welcome-file>index.jsp</welcome-file>
+	</welcome-file-list>
+
+	<servlet>
+		<servlet-name>DeployerService</servlet-name>
+		<servlet-class>
+			com.armada.deployerclient.endpoints.DeployerServiceEndpoint
+		</servlet-class>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>DeployerService</servlet-name>
+		<url-pattern>/DeployerService</url-pattern>
+	</servlet-mapping>
+</web-app>
