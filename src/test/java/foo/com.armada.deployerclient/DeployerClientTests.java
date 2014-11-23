@@ -25,7 +25,7 @@ public class DeployerClientTests {
 
 	@Test
 	public void testSearchImage() {
-//		dockerService.searchDockerRepository("helloworldtest");
+		dockerService.searchDockerRepository("helloworldtest");
 	}
 
 	@Test
@@ -40,22 +40,28 @@ public class DeployerClientTests {
 
 	@Test
 	public void testCreateContainer() {
-//		String[] command = { "ping", "127.0.0.1"};
+		String[] command = { "ping", "127.0.0.1"};
 //
 //		//TODO: make sure we give new containers dynamic names
 //		String id = dockerService.createContainer(
 //				"armadaproject/helloworldtest",
-//				"helloworldcontainer-2", command);
+//				"helloworldcontainer-3", command);
 	}
 
 	@Test
 	public void testStartContainer() {
-//		dockerService.startContainer("202b8b8ae809");
+//		dockerService.startContainer("c58c31136741");
 	}
 
 	@Test
 	public void testStopContainer() {
-//		dockerService.stopContainer("202b8b8ae809");
+//		dockerService.stopContainer("c58c31136741");
+	}
+
+	@Test
+	public void testRemoveContainer() {
+//		dockerService.removeContainer("202b8b8ae809");
+//		dockerService.removeContainer("9233332d95b6");
 	}
 
 }

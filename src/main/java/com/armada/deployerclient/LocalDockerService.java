@@ -141,6 +141,14 @@ public class LocalDockerService {
 	}
 
 	/**
+	 * Remove a container by id
+	 */
+	public void removeContainer(String containerId) {
+		dockerClient.removeContainerCmd(containerId).exec();
+	}
+
+
+	/**
 	 * Format an inputstream response
 	 */
 	protected String responseAsString(InputStream response) {

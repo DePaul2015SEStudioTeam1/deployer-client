@@ -8,7 +8,7 @@ public class DeployerClient {
     public static void main(String[] args) {
         ApplicationContext context = new ClassPathXmlApplicationContext("spring-config.xml");
 
-//        LocalDockerService dockerService = context.getBean(LocalDockerService.class);
-	    DeployerServiceEndpoint deployerServiceEndpoint = new DeployerServiceEndpoint();
+        LocalDockerService dockerService = context.getBean(LocalDockerService.class);
+//	    DeployerServiceEndpoint deployerServiceEndpoint = new DeployerServiceEndpoint();
     }
 }
