@@ -75,8 +75,6 @@ public class LocalDockerService {
 
 	/**
 	 * Pull an image from the remote docker registry Credentials to pull are give in the docker.io.properties file
-	 *
-	 * @param String imageName
 	 */
 	public void pullImage(String imageName) {
 		Info info = getLocalDockerInfo();
@@ -141,6 +139,14 @@ public class LocalDockerService {
 	public InspectContainerResponse inspectContainer(String containerId) {
 		return dockerClient.inspectContainerCmd(containerId).exec();
 	}
+
+	/**
+	 * Remove a container by id
+	 */
+	public void removeContainer(String containerId) {
+		dockerClient.removeContainerCmd(containerId).exec();
+	}
+
 
 	/**
 	 * Format an inputstream response
